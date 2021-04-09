@@ -5,42 +5,42 @@
     </head>
     <body>
         <header>
-            <div>
-            <h1 style="padding-bottom: 0px;">LetsPlayAi</h1>
-            <span style="padding-top: 0px;">Play with Ai</span>
+            <div class='title-name'>
+            <h1>gamePlayAi</h1>
+            <span>Play with Ai</span>
             </div>
-            <div class='nav'>
-                <span>Tic Tac Toe</span>
-                <span>Maze Solving</span>
-                <span>sudoko</span>
+            <div class='navigation'>
+                <span class="nav-element">Tic-Tac-Toe</span>
+                <span class="nav-element">Maze-Solving</span>
+                <span class="nav-element">sudoko</span>
             </div>
         </header>
-        <h1>TIC-TAC-TOE</h1>
-        <p>let's play till boreded</p>
-        <div id='game'>
-            <div id='winner'></div>
-            <h1 id='turn-notifier'>Lets Start</h1>
-             <table>
+        
+        <h1 class='game-title'>TIC-TAC-TOE</h1>
+        <div id='winner'>YOU WON</div>
+
+        <table>
 <!--row one in tic tac toe-->
-                <tr class='game-box'>
-                     <th id = "b1" class='board-element' onclick="move(this.id);"></th>
-                     <th id = "b2" class='board-element' onclick="move(this.id);"></th>
-                     <th id = "b3" class='board-element' onclick="move(this.id);"></th>
-                 </tr>
+            <tr class='game-box'>
+                <th id = "0" class='board-cell'>0</th>
+                <th id = "1" class='board-cell'>1</th>
+                <th id = "2" class='board-cell'>2</th>
+            </tr>
 <!--row two in tic tac toe-->                 
-                 <tr class='game-box'>
-                    <th id = "b4" class='board-element' onclick="move(this.id);"></th>
-                    <th id = "b5" class='board-element' onclick="move(this.id);"></th>
-                    <th id = "b6" class='board-element' onclick="move(this.id);"></th>
-                </tr>
+            <tr class='game-box'>
+                <th id = "3" class='board-cell'>3</th>
+                <th id = "4" class='board-cell'>4</th>
+                <th id = "5" class='board-cell'>4</th>
+            </tr>
 <!--row three in tic tac toe-->
-                <tr class='game-box'>
-                    <th id = "b7" class='board-element' onclick="move(this.id);"></th>
-                    <th id = "b8" class='board-element' onclick="move(this.id);"></th>
-                    <th id = "b9" class='board-element' onclick="move(this.id);"></th>
-                </tr>                  
-            </table>
-        </div>
+            <tr class='game-box'>
+                <th id = "6" class='board-cell'>5</th>
+                <th id = "7" class='board-cell'>6</th>
+                <th id = "8" class='board-cell'>7</th>
+            </tr>                  
+        </table>
+
+        <button class='start-game' onClick='start();')>Restart</button>
         <script src='tic-tac-toe.js'></script>
     </body>
 </html>

@@ -1,24 +1,67 @@
+*{
+    box-sizing: border-box;
+}
 body{
-    background-color:#696969;
+    background-color:cornflowerblue;
 }
-div.nav{
-    position: relative;
-    right:10px;
+header{
+    background-color:coral;
+    margin:-8px;
+    padding-left: 10px;
+    padding-bottom: 13px;
 }
-#game{
-    margin-left: 35%;
+div.title-name h1{
+    font-size:40px;
+    margin-bottom: 2px;
+    font-weight: lighter;
 }
-.game-box{
-    color:chartreuse;
-    font-size: 70px;
+div.title-name span{
+    padding-left: 50px;
+    font-style: italic;
+    font-size: 12px;
+    padding-bottom: 13px;
 }
-th{
+div.navigation{
+    position: absolute;
+    right: 20px;
+}
+.nav-element{
+    background-color: antiquewhite;
+    margin-right: 75px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.game-title{
+    position:absolute;
+    left: 587px;
+    margin-bottom: 20px;
+}
+
+/*for tic tac toe board*/
+#winner{
+    display: none;
+    position:absolute;
+    top:285px;
+    left: 55px;
+    width: 550px;
+    height: 250px;
+    background-color:violet;
+    font-size: 100px;
     text-align: center;
-    width: 35px;
-    height: 125px;
-    padding-top: 20px;
-    padding-left: 40px;
-    padding-right: 45px;
-    padding-bottom: 30px;
-    border: 1px dashed blanchedalmond;
+    padding-top: 55px;
+    color:tomato;
+}
+table{
+    position: absolute;
+    left:50%;
+    top:150px;
+    margin-left: -225px;
+}
+.board-cell{
+    border-collapse:collapse;
+    border: 2px blanchedalmond dashed;
+    width:150px;
+    height:150px;
+    font-size: 75px;
+    text-align: center;
 }
