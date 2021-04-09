@@ -1,0 +1,24 @@
+body{
+    background-color:#696969;
+}
+div.nav{
+    position: relative;
+    right:10px;
+}
+#game{
+    margin-left: 35%;
+}
+.game-box{
+    color:chartreuse;
+    font-size: 70px;
+}
+th{
+    text-align: center;
+    width: 35px;
+    height: 125px;
+    padding-top: 20px;
+    padding-left: 40px;
+    padding-right: 45px;
+    padding-bottom: 30px;
+    border: 1px dashed blanchedalmond;
+}

@@ -1,0 +1,46 @@
+<html lang="en">
+    <head>
+        <title>tiv tac toe</title>
+        <link  rel="stylesheet" href="tic-tac-toe.css">
+    </head>
+    <body>
+        <header>
+            <div>
+            <h1 style="padding-bottom: 0px;">LetsPlayAi</h1>
+            <span style="padding-top: 0px;">Play with Ai</span>
+            </div>
+            <div class='nav'>
+                <span>Tic Tac Toe</span>
+                <span>Maze Solving</span>
+                <span>sudoko</span>
+            </div>
+        </header>
+        <h1>TIC-TAC-TOE</h1>
+        <p>let's play till boreded</p>
+        <div id='game'>
+            <div id='winner'></div>
+            <h1 id='turn-notifier'>Lets Start</h1>
+             <table>
+<!--row one in tic tac toe-->
+                <tr class='game-box'>
+                     <th id = "b1" class='board-element' onclick="move(this.id);"></th>
+                     <th id = "b2" class='board-element' onclick="move(this.id);"></th>
+                     <th id = "b3" class='board-element' onclick="move(this.id);"></th>
+                 </tr>
+<!--row two in tic tac toe-->                 
+                 <tr class='game-box'>
+                    <th id = "b4" class='board-element' onclick="move(this.id);"></th>
+                    <th id = "b5" class='board-element' onclick="move(this.id);"></th>
+                    <th id = "b6" class='board-element' onclick="move(this.id);"></th>
+                </tr>
+<!--row three in tic tac toe-->
+                <tr class='game-box'>
+                    <th id = "b7" class='board-element' onclick="move(this.id);"></th>
+                    <th id = "b8" class='board-element' onclick="move(this.id);"></th>
+                    <th id = "b9" class='board-element' onclick="move(this.id);"></th>
+                </tr>                  
+            </table>
+        </div>
+        <script src='tic-tac-toe.js'></script>
+    </body>
+</html>
