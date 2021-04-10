@@ -1,19 +1,19 @@
 *{
     box-sizing: border-box;
 }
-body{
-    background-color:cornflowerblue;
-}
 header{
+    position: absolute;
     background-color:coral;
-    margin:-8px;
+    margin: -8px;
+    width: 100%;
     padding-left: 10px;
     padding-bottom: 13px;
 }
 div.title-name h1{
     font-size:40px;
     margin-bottom: 2px;
-    font-weight: lighter;
+    font-style: oblique;
+    font-weight:bold;
 }
 div.title-name span{
     padding-left: 50px;
@@ -22,30 +22,32 @@ div.title-name span{
     padding-bottom: 13px;
 }
 div.navigation{
-    position: absolute;
-    right: 20px;
+    position: relative;
+    left:800px;
 }
 .nav-element{
-    background-color: antiquewhite;
-    margin-right: 75px;
+    padding: 10px;
+    margin-right: 70px;
     font-weight: bold;
     font-size: 20px;
 }
 .game-title{
-    position:absolute;
+    position: absolute;
     left: 587px;
+    top: 125px;
     margin-bottom: 20px;
 }
-
+button{
+    cursor: pointer;
+}
 /*for tic tac toe board*/
 #winner{
+    position: absolute;
     display: none;
-    position:absolute;
-    top:285px;
-    left: 55px;
+    top:300px;
+    left: 400px;
     width: 550px;
     height: 250px;
-    background-color:violet;
     font-size: 100px;
     text-align: center;
     padding-top: 55px;
@@ -54,14 +56,31 @@ div.navigation{
 table{
     position: absolute;
     left:50%;
-    top:150px;
+    top:200px;
+    padding-bottom: 5px;
     margin-left: -225px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
 }
 .board-cell{
     border-collapse:collapse;
-    border: 2px blanchedalmond dashed;
+    border: 2px blanchedalmond groove;
     width:150px;
     height:150px;
     font-size: 75px;
     text-align: center;
+    cursor:pointer ;
+}
+
+table tr:first-child th{
+    border-top: none;
+}
+table tr:last-child th{
+    border-bottom: none;
+}
+.game-box th:first-child{
+    border-left: none;
+}
+.game-box th:last-child{
+    border-right: none;
 }
