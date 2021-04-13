@@ -1,0 +1,101 @@
+header{
+    position: relative;
+    background-color:darkgray;
+    top:-19px;
+    margin: -8px;
+    width: 100%;
+    height: 125px;
+    padding-left: 20px;
+ }
+div.title-name h1{
+    font-size:40px;
+    padding-top: 15px;
+    margin-bottom: 2px;
+    font-style: oblique;
+    font-weight:bold;
+}
+div.title-name span{
+    padding-left: 50px;
+    font-style: italic;
+    font-size: 12px;
+}
+div.navigation{
+    position: absolute;
+    right:15px;
+}
+.nav-element{
+    padding: 10px;
+    margin-right: 70px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.game-title{
+    position: relative;
+    left: 587px;
+    cursor: pointer;
+}
+/* board */
+table{
+    border-collapse: collapse;
+    margin-left: 390px;
+}
+th.cell{
+    border: 2px solid black;
+    width: 40px;
+    height: 40px;
+    cursor: cell;
+}
+div.sub-cell{    
+    border: 1px solid black;
+    border-top: 0px;
+    border-left: 0px;
+    width: 10px;
+    height: 10px;
+    margin-top: -11px;
+    margin-left: -1px;
+    font-size: 10px;
+}
+
+/* bodering  */
+th:nth-child(3),th:nth-child(6){
+    border-right-width: 5px;
+}
+tr.table-row:nth-child(4),#row-3 th,#row-6 th{
+    border-top-width: 5px ;
+}
+/* numbers list */
+.container{
+    border-collapse: collapse;
+}
+#num-container{
+    float: right;
+    position: relative;
+    right: 400px;
+    top:-10px;
+    border-collapse: collapse;
+}
+p.num-container-element{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: -20px;
+    font-size: 17px;
+    font-weight: bold;
+    font-style: oblique;
+    border: 3px salmon solid;
+    cursor: grab;
+}
+p.selected{
+    background-color: blue;
+    cursor: grabbing;
+}
+
+#solution{
+    position: absolute;
+    color:blueviolet;
+    left: 40%;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
