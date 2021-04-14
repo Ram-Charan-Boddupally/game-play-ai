@@ -1,0 +1,99 @@
+header{
+    position: relative;
+    background-color:darkgray;
+    top:-19px;
+    margin: -8px;
+    width: 100%;
+    height: 125px;
+    padding-left: 20px;
+ }
+div.title-name h1{
+    font-size:40px;
+    padding-top: 15px;
+    margin-bottom: 2px;
+    font-style: oblique;
+    font-weight:bold;
+}
+div.title-name span{
+    padding-left: 50px;
+    font-style: italic;
+    font-size: 12px;
+}
+div.navigation{
+    position: absolute;
+    right:15px;
+}
+.nav-element{
+    padding: 10px;
+    margin-right: 70px;
+    font-weight: bold;
+    font-size: 20px;
+}
+.game-title{
+    position: relative;
+    left: 587px;
+    cursor: pointer;
+}
+
+/* board */
+table{
+    border-collapse: collapse;
+    margin-left: 300px;
+}
+th.cell{
+    border: 2px solid black;
+    width: 40px;
+    height: 40px;
+    cursor: cell;
+}
+th.solved{
+    background-color: 'green';
+}
+#solution{
+    position: absolute;
+    color:blueviolet;
+    left: 40%;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* numbers list */
+.container{
+    border-collapse: collapse;
+}
+#block-container{
+    float: right;
+    position: relative;
+    right: 250px;
+    bottom: 390px;
+    border-collapse: collapse;
+}
+p.block-container-element{
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 17px;
+    font-weight: bold;
+    border: 1px solid cyan;
+    cursor: grab;
+}
+#wall,.wall-block{
+    background-color: darkgray;
+}
+#free,.free-block{
+    background-color: floralwhite;
+}
+#start,.start-block{
+    background-color:red;
+}
+#end,.end-block{
+    background-color: seagreen;
+}
+#selected-item{
+    border: 2px solid blueviolet;
+    cursor: none;
+}

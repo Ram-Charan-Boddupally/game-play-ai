@@ -11,11 +11,11 @@ var availableBoards = [{probBoard: '07000000951042060008030070000800137002308004
                        {probBoard: '005007000000000902701209600950080300020036000007005010000600059530090000000150260',
                          solBoard: '295367184643518972781249635954781326128436597367925418412673859536892741879154263'},
                        {probBoard: '004079630007530008023000000060050000300600801900001300000000015800203070709000000',
-                         solBoard: '584179632697532148123846597461358729372694851958721364236987415845213976719465283'},
-                       {probBoard: '000000200080007090602000500070060000000901000000020040005000603090400070006000000',
-                         solBoard: '957613284483257196612849537178364952524971368369528741845792613291436875736185429'}
+                         solBoard: '584179632697532148123846597461358729372694851958721364236987415845213976719465283'}
+                      // the below suduko is not solved by the ai    
+                     //    {probBoard: '000000200080007090602000500070060000000901000000020040005000603090400070006000000',
+                    //      solBoard: '957613284483257196612849537178364952524971368369528741845792613291436875736185429'}
                       ];
-
 function start(){
     for(let i=0;i<numCells.length;i++){
         numCells[i].addEventListener('click',getElement);
@@ -28,16 +28,18 @@ function start(){
         cells[i].style.removeProperty('background-color');
         if(availableBoards[selectedBoard].probBoard[i] === '0'){
             board[i] = '';
-            cells[i].innerHTML = cells[i].id;
+           cells[i].innerHTML = board[i];
             continue;     
         }
         nonEmptyIndices.push(i);
         board[i] = availableBoards[selectedBoard].probBoard[i];
-        cells[i].innerHTML = cells[i].id;
-    }   
+        cells[i].innerHTML = board[i];
+    }
+    for(let i =0;i<nonEmptyIndices.length;i++){
+        console.log(nonEmptyIndices[i]);
+    }  
 }
-console.log(cells[73]);
-console.log(cells[74]);
+start();
 
 function is_changable(id){
     for (let i = 0; i < nonEmptyIndices.length; i++) {
@@ -47,13 +49,12 @@ function is_changable(id){
     }
     return true;  
 }
-
+//sets the elemnt to the board
 function setElement(event){
     if(selectedElement == 0){
         alert('select element from container');
     }
     let id = parseInt(event.target.id.substring(1));
-    
     if(is_changable(id)){
         if(is_verified(id,selectedElement)){
             event.target.innerHTML = selectedElement;
@@ -63,7 +64,7 @@ function setElement(event){
         alert('cannot change the element');
     }    
 }
-
+//selects the elemnent from the board container
 function getElement(event){
     if(selectedElement != 0){
         if(event.target.classList.contains('selected')){
@@ -86,7 +87,6 @@ function getElement(event){
 }
 
 function set_wrong(element,locationId){
-    console.log("id : "+locationId);
     document.getElementById(element).style.backgroundColor = 'red';
     document.getElementById(locationId).style.backgroundColor = 'red';
     setTimeout(function(){
@@ -99,23 +99,16 @@ function is_verified(locationId,element){
     //location id shoud be index of the array changed on 12/4/21
     let id = parseInt(locationId);
     let col = id % 9; // reminder gives the col
-    let row = (Math.floor(id / 9)); //quotient gives the row index
-
+    let row = (Math.floor(id / 9) * 9); //quotient gives the row index
     //checks if a row contains the same number
     for(let i=row;i<=row+8;i++){
-        if(i == id){
-            continue;
-        }
         if(board[i] == element){
             set_wrong(element,'b'+locationId);
             return false;
         }
     }
     //checks if the column contains the same number
-    for(let i=col;i<=row+72;i+=9){
-        if(i == id){
-            continue;
-        }
+    for(let i=col;i<=col+72;i+=9){
         if(board[i] == element){
             set_wrong(element,'b'+locationId);
             return false;
@@ -123,19 +116,14 @@ function is_verified(locationId,element){
     }
     //checks for the sub square contains the same number or not
 
-    let boxStartId = (((Math.floor(id/3))*3) - (((id/9)%3)*9));    
-    for(let i = boxStartId;i<=boxStartId+3;i++){
-            if(i == id){
-                continue;
-            }if(board[i] == element){
+    let boxStartId = (((Math.floor(id/3))*3) - ((Math.floor(id/9)%3)*9));    
+    for(let i = boxStartId;i<boxStartId+3;i++){
+            if(board[i] == element){
                 set_wrong(element,'b'+locationId);
                 return false;
-            }
+            }    
         let boxColStartId = i;
         for(let j=i;j<=boxColStartId+18;j+=9){
-            if(j == id){
-                continue;
-            }
             if(board[j] == element){
                 set_wrong(element,'b'+locationId);
                 return false;
@@ -146,8 +134,19 @@ function is_verified(locationId,element){
 }
 
 function aiPlay(){
-    document.getElementsByTagName('h1').innerHTML = 'Processing';
-    probSolver(board);
+    document.getElementsByClassName('game-title').innerHTML =   'Processing';
+    let newBoard = probSolver(board);
+    if(!completed(newBoard)){
+        document.getElementsByClassName('game-title').innerHTML = 'Not Solved'
+    }
+
+    for(let i =0;i<81;i++){
+        if(is_changable(i)){
+            cells[i].innerText = newBoard[i];
+        }else{
+            cells[i].style.backgroundColor = 'blue';           
+        }
+    }
 }
 
 let possibleValues = [1,2,3,4,5,6,7,8,9];
@@ -155,17 +154,7 @@ let possibleValues = [1,2,3,4,5,6,7,8,9];
 function probSolver(newBoard){
 
     if(completed(newBoard)){
-        console.log("completed");
-        for(let i=0;i<81;i++){
-            if(!is_changable(i)){
-                cells[i].innerHTML = newBoard[i];
-                cells[i].style.backgroundColor = 'green';
-                if(newBoard[i] != availableBoards[selectedBoard].solBoard[i]){
-                    cells[i].style.backgroundColor = 'red';
-                }        
-            }
-        }
-        return true;
+        return newBoard;
     }
 
     for(let i=0;i<81;i++){
@@ -175,16 +164,16 @@ function probSolver(newBoard){
                 if(is_verified(i,key)){
                     newBoard[i] = key;
                     let result = probSolver(newBoard);
-                    if(result == false){
-                        newBoard[i] ='';
-                    }else{
-                        return true;
-                    }        
+                    if(result != false){
+                        return newBoard;
+                    }    
+                    newBoard[i] ='';        
                 }
             }
+            return false;
         }
     }
-    return false;
+    return true;
 }
 
 function completed(newBoard){
