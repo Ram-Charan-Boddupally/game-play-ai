@@ -10,13 +10,13 @@
 <body>
     <header>
         <div class='title-name'>
-        <h1>gamePlayAi</h1>
-        <span>Play with Ai</span>
+            <a href="../base/base.html"><h1 style="color: crimson;">gamePlayAi</h1></a>
+            <span>Play with Ai</span>
         </div>
         <div class='navigation'>
-            <a><span class="nav-element">Tic-Tac-Toe</span></a>
-            <a><span class="nav-element">Maze-Solving</span></a>
-            <a><span class="nav-element">sudoko</span></a>
+            <a href="../tic-tac-toe/tic-tac-toe.html"><span class="nav-element" >Tic-Tac-Toe</span></a>
+            <a href="../maze-solving/base.html"><span class="nav-element" >Maze-Solving</span></a>
+            <a href="../sudoko/base.html"><span class="nav-element"  style="cursor: none; color: black;">sudoko</span></a>
         </div>
     </header>
     <h1 onclick="start();" class='game-title'>SUDOKO</h1>
@@ -89,7 +89,7 @@
             <p class="num-container-element" id='9'>9</p>
         </div>
     </div>            
-    <div id='solution' onclick='aiPlay();'>Solve By Computer</div> 
+    <div id='solution' onclick='aiPlay();'>Solve Sudoko</div> 
     <script src="script.js"></script>
 </body>
 </html>

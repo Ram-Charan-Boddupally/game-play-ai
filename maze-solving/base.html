@@ -10,16 +10,16 @@
 <body>
     <header>
         <div class='title-name'>
-        <h1>gamePlayAi</h1>
-        <span>Play with Ai</span>
+            <a href="../base/base.html"><h1 style="color: crimson;">gamePlayAi</h1></a>
+            <span>Play with Ai</span>
         </div>
         <div class='navigation'>
-            <a><span class="nav-element">Tic-Tac-Toe</span></a>
-            <a><span class="nav-element">Maze-Solving</span></a>
-            <a><span class="nav-element">sudoko</span></a>
+            <a href="../tic-tac-toe/tic-tac-toe.html"><span class="nav-element" >Tic-Tac-Toe</span></a>
+            <a href="../maze-solving/base.html"><span class="nav-element" style="cursor: none; color: black;" >Maze-Solving</span></a>
+            <a href="../sudoko/base.html"><span class="nav-element">sudoko</span></a>
         </div>
     </header>
-    <h1 onclick="start();" class='game-title'>Maze</h1>
+<h1 onclick="start();" class='game-title'>Maze-Solving</h1>
     <div id='game'>
         <table>
             <tr class="table-row" id='row-0'>
@@ -115,14 +115,13 @@
     <div class='container'>
         <div id='block-container'>
             <p class="block-container-element " id='selected-item'></p>
-            <p class="block-container-element select " id='wall'>E</p>
-            <p class="block-container-element select " id='free'>F</p>
-            <p class="block-container-element select " id='start'>A</p>
-            <p class="block-container-element select " id='end'>B</p>
+            <p class="block-container-element select " id='wall'>WALL</p>
+            <p class="block-container-element select " id='free'>FREE</p>
+            <p class="block-container-element select " id='start'> A </p>
+            <p class="block-container-element select " id='end'>  B </p>
         </div>
     </div>
-    <div onclick="solveMazeBFS();">Solve By Computer</div>
-    <div id='solution' onclick='getIndex();'>Get Index</div>
+    <div id='solution' onclick="solveMazeBFS();">Solve Maze</div>
     <script src="script.js"></script>
 </body>
 </html>

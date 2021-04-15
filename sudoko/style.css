@@ -1,14 +1,20 @@
+a{
+    text-decoration: none;
+    color:cadetblue;
+}
+a:hover{
+    color: coral;
+}
 header{
     position: relative;
-    background-color:darkgray;
-    top:-19px;
-    margin: -8px;
+    background-color:lightsalmon;
+    margin: -30px;
     width: 100%;
-    height: 125px;
-    padding-left: 20px;
+    height: 145px;
+    padding-left: 40px;
  }
 div.title-name h1{
-    font-size:40px;
+    font-size:45px;
     padding-top: 15px;
     margin-bottom: 2px;
     font-style: oblique;
@@ -21,19 +27,25 @@ div.title-name span{
 }
 div.navigation{
     position: absolute;
-    right:15px;
+    right:10px;
 }
 .nav-element{
+    position: relative;
     padding: 10px;
-    margin-right: 70px;
+    margin-right: 60px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 25px;
+    bottom: -10px;
+    color: peachpuff;
 }
 .game-title{
     position: relative;
-    left: 587px;
+    top: 20px;
+    margin-bottom: 50px;
+    left: 525px;
     cursor: pointer;
 }
+
 /* board */
 table{
     border-collapse: collapse;
@@ -85,9 +97,13 @@ p.selected{
 
 #solution{
     position: absolute;
-    color:blueviolet;
+    color:crimson;
+    font-size: 25px;
+    font-weight: bolder;
+    font-style: italic;
     left: 40%;
     padding-top: 10px;
+    margin-top: 10px;
     margin-bottom: 10px;
     cursor: pointer;
 }

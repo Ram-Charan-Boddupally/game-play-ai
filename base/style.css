@@ -1,0 +1,68 @@
+/* header */
+a{
+    text-decoration: none;
+    color:cadetblue;
+}
+a:hover{
+    color: coral;
+}
+header{
+    position: relative;
+    background-color:lightsalmon;
+    top:-22px;
+    margin: -8px;
+    width: 100%;
+    height: 145px;
+    padding-left: 20px;
+ }
+div.title-name h1{
+    font-size:45px;
+    padding-top: 15px;
+    margin-bottom: 2px;
+    font-style: oblique;
+    font-weight:bold;
+}
+div.title-name span{
+    padding-left: 50px;
+    font-style: italic;
+    font-size: 12px;
+}
+div.navigation{
+    position: absolute;
+    right:10px;
+}
+.nav-element{
+    position: relative;
+    padding: 10px;
+    margin-right: 60px;
+    font-weight: bold;
+    font-size: 25px;
+    bottom: -10px;
+    color: peachpuff;
+}
+/* body  */
+.game-title{
+    text-align: center;
+    cursor: pointer;
+}
+
+section{
+    border: 2px solid black;
+    display: inline-block;
+    margin: 50px;
+}
+.game-img{
+    width: 325px;
+    height: 300px;
+    border-bottom: 2px solid black;
+    background-repeat: no-repeat;
+}
+div#tic-tac-toe{
+    background-image: url('../base/images/ticTacToe.png');
+}
+div#sudoko{
+    background-image: url('../base/images/suduko.png');
+}
+div#maze-solving{
+    background-image: url('../base/images/maze.png');
+}

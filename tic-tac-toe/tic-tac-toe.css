@@ -1,16 +1,24 @@
 *{
     box-sizing: border-box;
 }
-header{
-    position: absolute;
-    background-color:coral;
-    margin: -8px;
-    width: 100%;
-    padding-left: 10px;
-    padding-bottom: 13px;
+a{
+    text-decoration: none;
+    color:cadetblue;
 }
+a:hover{
+    color: coral;
+}
+header{
+    position: relative;
+    background-color:lightsalmon;
+     margin: -8px;
+    width: 100%;
+    height: 145px;
+    padding-left: 20px;
+ }
 div.title-name h1{
-    font-size:40px;
+    font-size:45px;
+    padding-top: 15px;
     margin-bottom: 2px;
     font-style: oblique;
     font-weight:bold;
@@ -19,25 +27,26 @@ div.title-name span{
     padding-left: 50px;
     font-style: italic;
     font-size: 12px;
-    padding-bottom: 13px;
 }
 div.navigation{
-    position: relative;
-    left:800px;
+    position: absolute;
+    right:10px;
 }
 .nav-element{
+    position: relative;
     padding: 10px;
-    margin-right: 70px;
+    margin-right: 60px;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 25px;
+    bottom: -10px;
+    color: peachpuff;
 }
+/* body */
 .game-title{
     position: absolute;
     left: 587px;
-    top: 125px;
+    top: 135px;
     margin-bottom: 20px;
-}
-button{
     cursor: pointer;
 }
 /*for tic tac toe board*/
@@ -56,7 +65,7 @@ button{
 table{
     position: absolute;
     left:50%;
-    top:200px;
+    top:220px;
     padding-bottom: 5px;
     margin-left: -225px;
     border-collapse: collapse;
