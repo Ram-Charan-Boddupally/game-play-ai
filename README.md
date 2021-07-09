@@ -4,3 +4,7 @@ the following project is a website consist of 3 games
 1.tic tac toe : minimax algorithm
 2.sudoko : backtracking algorithm
 3.maze solving : breadth first search algorithm
+
+
+Play at
+https://ram-charan-boddupally.github.io/game-play-ai/base/base.html
